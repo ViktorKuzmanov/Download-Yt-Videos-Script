@@ -1,0 +1,81 @@
+from pytube import YouTube
+ 
+list_urls = [ "https://www.youtube.com/watch?v=DxZTgIl84hI",
+"https://www.youtube.com/watch?v=DxZTgIl84hI",
+"https://www.youtube.com/watch?v=DxZTgIl84hI",
+"https://www.youtube.com/watch?v=hHUbLv4ThOo",
+"https://www.youtube.com/watch?v=DjP8GKQnL88",
+"https://www.youtube.com/watch?v=Hg1KH3OSpS0",
+"https://www.youtube.com/watch?v=iPGgnzc34tY",
+"https://www.youtube.com/watch?v=HhjHYkPQ8F0",
+"https://www.youtube.com/watch?v=yk0MAn9WU_0",
+"https://www.youtube.com/watch?v=0ahhYdoKIiQ",
+"https://www.youtube.com/watch?v=42qHltommoY",
+"https://www.youtube.com/watch?v=j-T4hRJNFJI",
+"https://www.youtube.com/watch?v=WFdLcr7oxEg", 
+"https://www.youtube.com/watch?v=3sN-DKevBuE",
+"https://www.youtube.com/watch?v=b4FZ8og276c",
+"https://www.youtube.com/watch?v=QDM8Vq-tOYo",
+"https://www.youtube.com/watch?v=s0-f5RncxcA",
+"https://www.youtube.com/watch?v=WXBHCQYxwr0",
+"https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+"https://www.youtube.com/watch?v=k2qgadSvNyU",
+"https://www.youtube.com/watch?v=tW0YtWTwP5Y",
+"https://www.youtube.com/watch?v=mG6UX2-JJek",
+"https://www.youtube.com/watch?v=75PpxGzR7s0",
+"https://www.youtube.com/watch?v=Ns_2PPfx_CA",
+"https://www.youtube.com/watch?v=QYh6mYIJG2Y",
+"https://www.youtube.com/watch?v=DyDfgMOUjCI",
+"https://www.youtube.com/watch?v=q0hyYWKXF0Q",
+"https://www.youtube.com/watch?v=pRpeEdMmmQ0",
+"https://www.youtube.com/watch?v=5dWeeUIZFgA",
+"https://www.youtube.com/watch?v=UqyT8IEBkvY",
+"https://www.youtube.com/watch?v=yzTuBuRdAyA",
+"https://www.youtube.com/watch?v=egtD5GfAh58",
+"https://www.youtube.com/watch?v=gCYcHz2k5x0",
+"https://www.youtube.com/watch?v=8EJ3zbKTWQ8",
+"https://www.youtube.com/watch?v=FLA1Su3sdIU",
+"https://www.youtube.com/watch?v=Gvchbkh4jQY",
+"https://www.youtube.com/watch?v=bUOcNI8RBGk",
+"https://www.youtube.com/watch?v=d89OW4Gueao",
+"https://www.youtube.com/watch?v=NyqXia8XTfI",
+"https://www.youtube.com/watch?v=IAt-LuTVTVM",
+"https://www.youtube.com/watch?v=l1GgyzCyJ6Y",
+"https://www.youtube.com/watch?v=aagHvZ8i-P4",
+"https://www.youtube.com/watch?v=Zd2rvLRdicg",
+"https://www.youtube.com/watch?v=yWFFUETxdjI",
+"https://www.youtube.com/watch?v=Ev3q2xLn_PU",
+"https://www.youtube.com/watch?v=VMT50KhLlRw",
+"https://www.youtube.com/watch?v=84x4Tey3gVs",
+"https://www.youtube.com/watch?v=MfyNsiGjirY",
+"https://www.youtube.com/watch?v=BEDEf-Vcm40",
+"https://www.youtube.com/watch?v=7mKnLVqDCIM",
+"https://www.youtube.com/watch?v=MKJEKww8zqk",
+"https://www.youtube.com/watch?v=JLtaUvhTPsc",
+"https://www.youtube.com/watch?v=smRb7wXmKN0",
+"https://www.youtube.com/watch?v=Oozb4odmckQ",
+"https://www.youtube.com/watch?v=TodOnMXHsS0",
+"https://www.youtube.com/watch?v=bL7J_BSVnKg",
+"https://www.youtube.com/watch?v=JYgezb4-UX0",
+"https://www.youtube.com/watch?v=eUEr9HaryG0",
+"https://www.youtube.com/watch?v=i5Zt9HdG6OE",
+"https://www.youtube.com/watch?v=Byw7tTPnpfg",
+"https://www.youtube.com/watch?v=otHRbRENFTQ",
+"https://www.youtube.com/watch?v=bw10euhE--8",
+"https://www.youtube.com/watch?v=BVYylANLIiE",
+"https://www.youtube.com/watch?v=sMngoF7_4A8",
+"https://www.youtube.com/watch?v=fwpyL0w-zyI",
+"https://www.youtube.com/watch?v=_LN_T7U64Q8",
+"https://www.youtube.com/watch?v=zWaymcVmJ-A"]
+
+ 
+for url in list_urls:
+ 
+    try:
+        yt_obj = YouTube(url)
+ 
+        yt_obj.streams.get_highest_resolution().download()
+    except Exception as e:
+        print(e)
+        raise Exception('Some exception occurred.')
+    print('All YouTube videos downloaded successfully.')
